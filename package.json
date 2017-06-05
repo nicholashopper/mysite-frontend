@@ -1,0 +1,25 @@
+{
+  "name": "mysite-frontend",
+  "version": "1.0.0",
+  "description": "This is the frontent side of my personal website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholashopper/mysite-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicholashopper/mysite-frontend/issues"
+  },
+  "homepage": "https://github.com/nicholashopper/mysite-frontend#readme",
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
+  }
+}

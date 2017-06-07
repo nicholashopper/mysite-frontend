@@ -10,3 +10,5 @@ RUN npm install --save babel-core
 RUN npm install --save babel-preset-latest
 RUN npm install --save babel-preset-react
 RUN npm install --save webpack babel-loader
+RUN npm install --save express webpack-dev-middleware
+RUN npm install --save react react-dom

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
+
 class App extends Component {
   render () {
     return (
@@ -18,7 +19,7 @@ class App extends Component {
 }
 const Home = () => <h1>NICHOLAS.WORKS</h1>
 const Contact = () => <h1>Contact</h1>
-const Blog = () => <h1>Blog</h1>
+const Blog = () => <div><h1>Blog</h1></div>
 const About = () => <h1>About</h1>
 const Hire = () => <h1>Hire</h1>
 const NotFound = () => <h1>404 :)</h1>

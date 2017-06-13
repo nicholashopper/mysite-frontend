@@ -16,7 +16,7 @@ var blog_list_component_1 = require("./Blog/blog-list.component");
 var about_component_1 = require("./About/about.component");
 var projects_component_1 = require("./Projects/projects.component");
 // import { DogDetailsComponent }  from './dogs/dog-details.component';
-// import { PetService }          from './pet.service';
+var blog_service_1 = require("./Blog/blog.service");
 // import { Pet }          from './pet';
 var app_routes_1 = require("./app.routes");
 // Decorator
@@ -40,9 +40,9 @@ AppModule = __decorate([
             about_component_1.AboutComponent,
             projects_component_1.ProjectsComponent
         ],
-        // providers: [
-        //  PetService
-        // ],
+        providers: [
+            blog_service_1.BlogService
+        ],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

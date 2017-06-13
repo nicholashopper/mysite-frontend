@@ -10,7 +10,7 @@ import { BlogListComponent }   from './Blog/blog-list.component';
 import { AboutComponent }  from './About/about.component';
 import { ProjectsComponent }      from './Projects/projects.component';
 // import { DogDetailsComponent }  from './dogs/dog-details.component';
-// import { PetService }          from './pet.service';
+import { BlogService }          from './Blog/blog.service';
 // import { Pet }          from './pet';
 import { routing } from './app.routes';
 
@@ -29,9 +29,9 @@ import { routing } from './app.routes';
     AboutComponent,
     ProjectsComponent
   ],
-  // providers: [
-  //  PetService
-  // ],
+  providers: [
+    BlogService
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {

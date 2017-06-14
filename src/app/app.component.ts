@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HomeComponent } from './home.component'
 // Import router directives
 // Deprecated
 // import { ROUTER_DIRECTIVES } from '@angular/router';
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
   template: `
-    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+    <div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row">
 
@@ -22,13 +23,10 @@ import { Component } from '@angular/core';
             <a class="mdl-navigation__link" [routerLink]="['/blog']">Blog</a>
             <a class="mdl-navigation__link" [routerLink]="['/projects']">Projects</a>
             <a class="mdl-navigation__link" [routerLink]="['/about']">About</a>
+            <a class="mdl-navigation__link" [routerLink]="['/contact']">Contact</a>
           </nav>
         </div>
       </header>
-
-      <main class="mdl-layout__content">
-        <h1 class="header-text">Howdy!</h1>
-      </main>
     </div>
 
     <!-- Router Outlet -->

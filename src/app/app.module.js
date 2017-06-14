@@ -12,12 +12,13 @@ var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 // Declarations
 var app_component_1 = require("./app.component");
+var home_component_1 = require("./home.component");
+var _404_component_1 = require("./404.component");
 var blog_list_component_1 = require("./Blog/blog-list.component");
 var about_component_1 = require("./About/about.component");
 var projects_component_1 = require("./Projects/projects.component");
-// import { DogDetailsComponent }  from './dogs/dog-details.component';
+var contact_component_1 = require("./Contact/contact.component");
 var blog_service_1 = require("./Blog/blog.service");
-// import { Pet }          from './pet';
 var app_routes_1 = require("./app.routes");
 // Decorator
 var AppModule = (function () {
@@ -38,12 +39,17 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             blog_list_component_1.BlogListComponent,
             about_component_1.AboutComponent,
-            projects_component_1.ProjectsComponent
+            projects_component_1.ProjectsComponent,
+            contact_component_1.ContactComponent,
+            home_component_1.HomeComponent,
+            _404_component_1.ErrorComponent
         ],
         providers: [
             blog_service_1.BlogService
         ],
-        bootstrap: [app_component_1.AppComponent]
+        bootstrap: [
+            app_component_1.AppComponent
+        ]
     })
 ], AppModule);
 exports.AppModule = AppModule;

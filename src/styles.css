@@ -1,24 +1,115 @@
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+@font-face {
+font-family: 'Roboto';
+src: url('fonts/roboto/Roboto-Light-webfont.eot');
+src: url('fonts/roboto/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+     url('fonts/roboto/Roboto-Light-webfont.woff') format('woff'),
+     url('fonts/roboto/Roboto-Light-webfont.ttf') format('truetype'),
+     url('fonts/roboto/Roboto-Light-webfont.svg#RobotoRegular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Roboto-Bold';
+src: url('fonts/roboto/Roboto-BoldCondensed-webfont.eot');
+src: url('fonts/roboto/Roboto-BoldCondensed-webfont.eot?#iefix') format('embedded-opentype'),
+     url('fonts/roboto/Roboto-BoldCondensed-webfont.woff') format('woff'),
+     url('fonts/roboto/Roboto-BoldCondensed-webfont.ttf') format('truetype'),
+     url('fonts/roboto/Roboto-BoldCondensed-webfont.svg#RobotoRegular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+  font-family: 'Roboto-Bold';
+}
+
+p {
+  color: gray;
+  font-family: 'Roboto';
+  font-size: 150%;
 }
 
 /** ./style.css **/
 /* Jumbotron */
-.demo-layout-transparent {
+
+
+.home {
   background: linear-gradient(
       rgba(50, 75, 127, 0.45),
-      rgba(100, 150, 255, 0.45)
+      rgba(0, 0, 0, 0)
     ),
-    url('assets/cover.jpg') center / cover;
-  height: 400px;
+    url('assets/home-cover.jpg') center / cover;
+  height: 200px;
+}
+
+.blog {
+  background: linear-gradient(
+      rgba(50, 75, 127, 0.45),
+      rgba(0, 0, 0, 0)
+    ),
+    url('assets/blog-cover.jpg') center / cover;
+  height: 200px;
+}
+
+.projects {
+  background: linear-gradient(
+      rgba(50, 75, 127, 0.45),
+      rgba(0, 0, 0, 0)
+    ),
+    url('assets/projects-cover.jpg') center / cover;
+  height: 200px;
+}
+
+.about {
+  background: linear-gradient(
+      rgba(50, 75, 127, 0.45),
+      rgba(0, 0, 0, 0)
+    ),
+    url('assets/about-cover.jpg') center / cover;
+  height: 200px;
+}
+
+.contact {
+  background: linear-gradient(
+      rgba(50, 75, 127, 0.45),
+      rgba(0, 0, 0, 0)
+    ),
+    url('assets/contact-cover.jpg') center / cover;
+  height: 200px;
+}
+
+.error {
+  background: linear-gradient(
+      rgba(50, 75, 127, 0.45),
+      rgba(0, 0, 0, 0)
+    ),
+    url('assets/error-cover.jpg') center / cover;
+  height: 200px;
 }
 
 /* Nav Bar */
 .demo-layout-transparent .mdl-layout__header,
 .demo-layout-transparent .mdl-layout__drawer-button {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 1);
+  color: white;
+}
+
+.demo-layout-transparent_sub .mdl-layout__header_home,
+.demo-layout-transparent_sub .mdl-layout__drawer-button_home {
+  background: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+.demo-layout-transparent_sub .mdl-layout__header,
+.demo-layout-transparent_sub .mdl-layout__drawer-button {
+  background: rgba(0, 0, 0, .5);
   color: white;
 }
 
@@ -26,11 +117,13 @@ h1 {
 .header-text{
   text-align: center;
   vertical-align: middle;
-  line-height: 250px;
+  line-height: 75px;
   color: white;
+  font-size: 700%;
 }
 /* Content Wrapper */
 .container{
   width: 80%;
   margin: 0 auto;
 };
+

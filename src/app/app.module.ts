@@ -6,12 +6,13 @@ import { HttpModule, JsonpModule } from '@angular/http';
 
 // Declarations
 import { AppComponent }         from './app.component';
+import { HomeComponent }         from './home.component';
+import { ErrorComponent }         from './404.component';
 import { BlogListComponent }   from './Blog/blog-list.component';
 import { AboutComponent }  from './About/about.component';
 import { ProjectsComponent }      from './Projects/projects.component';
-// import { DogDetailsComponent }  from './dogs/dog-details.component';
+import { ContactComponent }      from './Contact/contact.component';
 import { BlogService }          from './Blog/blog.service';
-// import { Pet }          from './pet';
 import { routing } from './app.routes';
 
 // Decorator
@@ -27,12 +28,17 @@ import { routing } from './app.routes';
     AppComponent,
     BlogListComponent,
     AboutComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ContactComponent,
+    HomeComponent,
+    ErrorComponent
   ],
   providers: [
     BlogService
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ 
+    AppComponent
+ ]
 })
 export class AppModule {
     // Module class

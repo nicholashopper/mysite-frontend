@@ -15,7 +15,6 @@ require("rxjs/add/operator/map");
 var BlogService = (function () {
     function BlogService(http) {
         this.http = http;
-        // private postsUrl = 'http://localhost:8000/api/getAllBlogs';  // URL to web API
         this.postsUrl = 'https://nicholas.works/api/getAllBlogs';
     }
     BlogService.prototype.getPosts = function () {

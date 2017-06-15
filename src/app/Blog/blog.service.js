@@ -16,7 +16,7 @@ var BlogService = (function () {
     function BlogService(http) {
         this.http = http;
         // private postsUrl = 'http://localhost:8000/api/getAllBlogs';  // URL to web API
-        this.postsUrl = 'http://nicholas.works/api/getAllBlogs';
+        this.postsUrl = 'https://nicholas.works/api/getAllBlogs';
     }
     BlogService.prototype.getPosts = function () {
         return this.http.get(this.postsUrl)

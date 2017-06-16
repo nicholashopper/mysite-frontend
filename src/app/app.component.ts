@@ -26,6 +26,7 @@ import { HomeComponent } from './home.component'
             <a class="mdl-navigation__link" [routerLink]="['/contact']">Contact</a>
           </nav>
         </div>
+
       </header>
     </div>
 

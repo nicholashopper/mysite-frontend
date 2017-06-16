@@ -15,6 +15,8 @@ import { Component } from '@angular/core';
 
           <!-- Navigation with router directives-->
           <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" [routerLink]="['https://github.com/nicholashopper']">GitHub</a>
+            <a class="mdl-navigation__link" [routerLink]="['https://www.linkedin.com/in/nichhopper/']">LinkedIn</a>
           </nav>
         </div>
       </header>

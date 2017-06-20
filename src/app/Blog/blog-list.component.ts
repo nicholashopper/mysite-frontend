@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from './blog.service'
 import { Observable } from 'rxjs/Observable';
+import { ActivatedRoute } from '@angular/router';
 import { Post } from './post'
 
 
@@ -45,31 +46,42 @@ import { Post } from './post'
     <ul class="demo-list-icon mdl-list">
       <li class="mdl-list__item" *ngFor="let post of posts">
         <span>
-            <h3>{{post.title}}</h3>
+            <a [routerLink]="['/post', post.slug]"><h3>{{post.title}}</h3></a>
             <h5>{{post.posted |  date:'MM/dd/yyyy'}}</h5>
-            <p> {{post.body}} </p>
+            <div [innerHTML]="post.body"></div>
         </span>
     </ul>
     <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
   </div>`
 })
-// <i class="material-icons mdl-list__item-icon">pets</i>
-// <a [routerLink]="['/blog', post.slug]">{{ post.title }}</a>
+
 
 // Component class implementing OnInit
 export class BlogListComponent implements OnInit {
+  slug: string;
+  private sub: any;
+
   errorMessage: string;
   posts: Post[];
   mode = 'Observable';
  
-  constructor (private blogService: BlogService) {}
+
+  constructor (private route: ActivatedRoute, private blogService: BlogService) {}
  
-  ngOnInit() { this.getPosts(); }
- 
+  ngOnInit() {
+    this.sub = this.route.params.subscribe(params => {
+       this.slug = params['page']; 
+    });
+    this.getPosts();
+  }
+
   getPosts() {
       this.blogService.getPosts()
            .subscribe(
              posts => this.posts = posts,
              error =>  this.errorMessage = <any>error);
   }
-}
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+} 

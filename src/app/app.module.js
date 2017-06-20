@@ -14,12 +14,15 @@ var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var home_component_1 = require("./home.component");
 var _404_component_1 = require("./404.component");
-var blog_list_component_1 = require("./Blog/blog-list.component");
-var about_component_1 = require("./About/about.component");
-var projects_component_1 = require("./Projects/projects.component");
-var contact_component_1 = require("./Contact/contact.component");
-var blog_service_1 = require("./Blog/blog.service");
+var blog_list_component_1 = require("./blog/blog-list.component");
+var about_component_1 = require("./about/about.component");
+var projects_component_1 = require("./projects/projects.component");
+var contact_component_1 = require("./contact/contact.component");
+var blog_service_1 = require("./blog/blog.service");
+var post_routing_module_1 = require("./post/post-routing.module");
+var post_component_1 = require("./post/post.component");
 var app_routes_1 = require("./app.routes");
+var post_service_1 = require("./post/post.service");
 // Decorator
 var AppModule = (function () {
     function AppModule() {
@@ -33,7 +36,8 @@ AppModule = __decorate([
             forms_1.FormsModule,
             http_1.HttpModule,
             http_1.JsonpModule,
-            app_routes_1.routing
+            post_routing_module_1.PostRoutingModule,
+            app_routes_1.AppRoutingModule
         ],
         declarations: [
             app_component_1.AppComponent,
@@ -42,10 +46,12 @@ AppModule = __decorate([
             projects_component_1.ProjectsComponent,
             contact_component_1.ContactComponent,
             home_component_1.HomeComponent,
-            _404_component_1.ErrorComponent
+            _404_component_1.ErrorComponent,
+            post_component_1.PostComponent
         ],
         providers: [
-            blog_service_1.BlogService
+            blog_service_1.BlogService,
+            post_service_1.PostService
         ],
         bootstrap: [
             app_component_1.AppComponent

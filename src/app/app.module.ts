@@ -3,17 +3,20 @@ import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
-
 // Declarations
 import { AppComponent }         from './app.component';
 import { HomeComponent }         from './home.component';
 import { ErrorComponent }         from './404.component';
-import { BlogListComponent }   from './Blog/blog-list.component';
-import { AboutComponent }  from './About/about.component';
-import { ProjectsComponent }      from './Projects/projects.component';
-import { ContactComponent }      from './Contact/contact.component';
-import { BlogService }          from './Blog/blog.service';
-import { routing } from './app.routes';
+import { BlogListComponent }   from './blog/blog-list.component';
+import { AboutComponent }  from './about/about.component';
+import { ProjectsComponent }      from './projects/projects.component';
+import { ContactComponent }      from './contact/contact.component';
+import { BlogService }          from './blog/blog.service';
+import { PostRoutingModule }          from './post/post-routing.module';
+import { PostModule }          from './post/post.module';
+import { PostComponent }          from './post/post.component';
+import { AppRoutingModule } from './app.routes';
+import { PostService } from './post/post.service';
 
 // Decorator
 @NgModule({
@@ -22,7 +25,8 @@ import { routing } from './app.routes';
     FormsModule,
     HttpModule,
     JsonpModule,
-    routing
+    PostRoutingModule,
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
@@ -31,10 +35,12 @@ import { routing } from './app.routes';
     ProjectsComponent,
     ContactComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    PostComponent
   ],
   providers: [
-    BlogService
+    BlogService,
+    PostService
   ],
   bootstrap: [ 
     AppComponent

@@ -7,7 +7,7 @@ import { Post } from './post';
  
 @Injectable()
 export class BlogService {
-  private postsUrl = '/api/getAllBlogs';
+  private postsUrl = '/api/content/?purpose=blog';
 
   constructor (private http: Http) {}
  

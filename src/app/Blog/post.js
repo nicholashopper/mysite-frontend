@@ -1,6 +1,7 @@
 "use strict";
 var Post = (function () {
-    function Post(title, slug, body, posted, category) {
+    function Post(purpose, title, slug, body, posted, category) {
+        this.purpose = purpose;
         this.title = title;
         this.slug = slug;
         this.body = body;

@@ -11,8 +11,6 @@ import { ErrorComponent } from './404.component';
 // Route Configuration
 export const routes: Routes = [
   { path: '',      component: HomeComponent },
-  { path: 'blog', component: BlogListComponent, },
-  { path: 'projects', component: ProjectsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: '**', component: ErrorComponent }

@@ -12,17 +12,20 @@ var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 // Declarations
 var app_component_1 = require("./app.component");
+var app_routes_1 = require("./app.routes");
 var home_component_1 = require("./home.component");
 var _404_component_1 = require("./404.component");
-var blog_list_component_1 = require("./blog/blog-list.component");
-var about_component_1 = require("./about/about.component");
-var projects_component_1 = require("./projects/projects.component");
-var contact_component_1 = require("./contact/contact.component");
-var blog_service_1 = require("./blog/blog.service");
 var post_routing_module_1 = require("./post/post-routing.module");
 var post_component_1 = require("./post/post.component");
-var app_routes_1 = require("./app.routes");
 var post_service_1 = require("./post/post.service");
+var blog_service_1 = require("./blog/blog.service");
+var blog_routing_module_1 = require("./blog/blog-routing.module");
+var blog_list_component_1 = require("./blog/blog-list.component");
+var projects_component_1 = require("./projects/projects.component");
+var projects_service_1 = require("./projects/projects.service");
+var projects_routing_module_1 = require("./projects/projects-routing.module");
+var about_component_1 = require("./about/about.component");
+var contact_component_1 = require("./contact/contact.component");
 // Decorator
 var AppModule = (function () {
     function AppModule() {
@@ -37,6 +40,8 @@ AppModule = __decorate([
             http_1.HttpModule,
             http_1.JsonpModule,
             post_routing_module_1.PostRoutingModule,
+            blog_routing_module_1.BlogRoutingModule,
+            projects_routing_module_1.ProjectsRoutingModule,
             app_routes_1.AppRoutingModule
         ],
         declarations: [
@@ -51,7 +56,8 @@ AppModule = __decorate([
         ],
         providers: [
             blog_service_1.BlogService,
-            post_service_1.PostService
+            post_service_1.PostService,
+            projects_service_1.ProjectsService
         ],
         bootstrap: [
             app_component_1.AppComponent

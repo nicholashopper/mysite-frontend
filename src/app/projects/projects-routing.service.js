@@ -6,28 +6,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var common_1 = require("@angular/common");
-var forms_1 = require("@angular/forms");
-var post_component_1 = require("./post.component");
-var post_service_1 = require("./post.service");
-var PostModule = (function () {
-    function PostModule() {
+var router_1 = require("@angular/router");
+var projects_component_1 = require("./projects.component");
+var routes = [
+    { path: 'projects', component: projects_component_1.ProjectsComponent },
+    { path: 'projects/:type', component: projects_component_1.ProjectsComponent }
+];
+var ProjectRoutingModule = (function () {
+    function ProjectRoutingModule() {
     }
-    return PostModule;
+    return ProjectRoutingModule;
 }());
-PostModule = __decorate([
+ProjectRoutingModule = __decorate([
     core_1.NgModule({
-        imports: [
-            common_1.CommonModule,
-            forms_1.FormsModule,
-        ],
-        declarations: [
-            post_component_1.PostComponent
-        ],
-        providers: [
-            post_service_1.PostService
-        ],
+        imports: [router_1.RouterModule.forChild(routes)],
+        exports: [router_1.RouterModule]
     })
-], PostModule);
-exports.PostModule = PostModule;
-//# sourceMappingURL=post.module.js.map
+], ProjectRoutingModule);
+exports.ProjectRoutingModule = ProjectRoutingModule;
+//# sourceMappingURL=projects-routing.service.js.map

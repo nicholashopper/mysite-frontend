@@ -38,7 +38,7 @@ PostComponent = __decorate([
     core_1.Component({
         selector: 'post-details',
         providers: [post_service_1.PostService],
-        template: "\n    <div class=\"container\">\n      <div *ngFor=\"let post of posts\">\n        <h1>{{post.title}}</h1>\n        <h5>{{post.posted |  date:'MM/dd/yyyy'}}</h5>\n        <div [innerHTML]=\"post.body\"></div>\n      </div>\n      <p *ngIf=\"posts?.length < 1\"><br>Whoops! post/{{slug}} does not exist.</p>\n    </div>\n  ",
+        template: "\n    <div class=\"container\">\n      <div class=\"page\" *ngFor=\"let post of posts\">\n        <h1>{{post.title}}</h1>\n        <h5>{{post.posted |  date:'MM/dd/yyyy'}}</h5>\n        <div [innerHTML]=\"post.body\"></div>\n      </div>\n      <p *ngIf=\"posts?.length < 1\"><br>Whoops! post/{{slug}} does not exist.</p>\n    </div>\n  ",
     }),
     __metadata("design:paramtypes", [router_1.ActivatedRoute, post_service_1.PostService])
 ], PostComponent);

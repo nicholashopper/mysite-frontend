@@ -8,7 +8,7 @@ import { Post } from '../blog/post';
   providers: [ PostService ],
   template: `
     <div class="container">
-      <div *ngFor="let post of posts">
+      <div class="page" *ngFor="let post of posts">
         <h1>{{post.title}}</h1>
         <h5>{{post.posted |  date:'MM/dd/yyyy'}}</h5>
         <div [innerHTML]="post.body"></div>

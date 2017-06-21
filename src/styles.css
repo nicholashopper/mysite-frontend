@@ -126,10 +126,36 @@ p {
   font-size: 700%;
 }
 /* Content Wrapper */
+body {
+  background-color: #f2f2f2;
+}
 .container{
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
+
+.page {
+  width: 80%;
+  padding: 10%;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 10px #888888;
+}
+
+.post-button {
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  box-shadow: 5px 5px 10px #888888;
+}
+
+.post-button:hover {
+    background-color: #f5f5f5;
+    box-shadow: 3px 3px 8px #888888;
+}
+
 
 @media screen and (max-width: 775px) {
     .header-text{

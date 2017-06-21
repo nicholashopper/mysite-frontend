@@ -20,13 +20,13 @@ var BlogListComponent = (function () {
     BlogListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.sub = this.route.params.subscribe(function (params) {
-            _this.slug = params['page'];
+            _this.page = params['page'];
+            _this.getPosts();
         });
-        this.getPosts();
     };
     BlogListComponent.prototype.getPosts = function () {
         var _this = this;
-        this.blogService.getPosts()
+        this.blogService.getPosts(this.page)
             .subscribe(function (posts) { return _this.posts = posts; }, function (error) { return _this.errorMessage = error; });
     };
     BlogListComponent.prototype.ngOnDestroy = function () {
@@ -38,7 +38,7 @@ BlogListComponent = __decorate([
     core_1.Component({
         selector: 'blog-list',
         providers: [blog_service_1.BlogService],
-        template: "\n\n\n  <div class=\"blog\">\n  <div class=\"demo-layout-transparent_sub mdl-layout mdl-js-layout mdl-layout--fixed-header\">\n      <header class=\"mdl-layout__header mdl-layout__header--transparent\">\n        <div class=\"mdl-layout__header-row\">\n\n          <!-- Title -->\n          <span class=\"mdl-layout-title\"></span>\n\n          <!-- Add spacer, to align navigation to the right -->\n          <div class=\"mdl-layout-spacer\"></div>\n\n          <!-- Navigation with router directives-->\n          <nav class=\"mdl-navigation\">\n            <a class=\"mdl-navigation__link\" [routerLink]=\"['/blog/all']\">All Topics</a>\n            <a class=\"mdl-navigation__link\" [routerLink]=\"['/blog/travel']\">Travel</a>\n            <a class=\"mdl-navigation__link\" [routerLink]=\"['/blog/tech']\">Tech</a>\n            <a class=\"mdl-navigation__link\" [routerLink]=\"['/blog/other']\">Other</a>\n          </nav>\n        </div>\n      </header>\n\n      <main class=\"mdl-layout__content\">\n        <h1 class=\"header-text\">Welcome to my blog!</h1>\n      </main>\n    </div>\n    </div>\n\n\n\n\n\n  <div class=\"container\">\n    <ul class=\"demo-list-icon mdl-list\">\n      <li class=\"mdl-list__item\" *ngFor=\"let post of posts\">\n        <span>\n            <a [routerLink]=\"['/post', post.slug]\"><h3>{{post.title}}</h3></a>\n            <h5>{{post.posted |  date:'MM/dd/yyyy'}}</h5>\n            <div [innerHTML]=\"post.body\"></div>\n        </span>\n    </ul>\n    <p class=\"error\" *ngIf=\"errorMessage\">{{errorMessage}}</p>\n  </div>"
+        template: "\n\n\n  <div class=\"blog\">\n  <div class=\"demo-layout-transparent_sub mdl-layout mdl-js-layout mdl-layout--fixed-header\">\n      <header class=\"mdl-layout__header mdl-layout__header--transparent\">\n        <div class=\"mdl-layout__header-row\">\n\n          <!-- Title -->\n          <span class=\"mdl-layout-title\"></span>\n\n          <!-- Add spacer, to align navigation to the right -->\n          <div class=\"mdl-layout-spacer\"></div>\n\n          <!-- Navigation with router directives-->\n          <nav class=\"mdl-navigation\">\n            <a class=\"mdl-navigation__link\" [routerLink]=\"['/blog/all']\">All Topics</a>\n            <a class=\"mdl-navigation__link\" [routerLink]=\"['/blog/travel']\">Travel</a>\n            <a class=\"mdl-navigation__link\" [routerLink]=\"['/blog/tech']\">Tech</a>\n            <a class=\"mdl-navigation__link\" [routerLink]=\"['/blog/other']\">Other</a>\n          </nav>\n        </div>\n      </header>\n\n      <main class=\"mdl-layout__content\">\n        <h1 class=\"header-text\">Welcome to my blog!</h1>\n      </main>\n    </div>\n    </div>\n\n  <div class=\"container\">\n    <ul class=\"demo-list-icon mdl-list\">\n      <li class=\"mdl-list__item\" *ngFor=\"let post of posts\">\n        <a class=\"post-button\" [routerLink]=\"['/post', post.slug]\">\n          <div>\n              <h3>{{post.title}}</h3>\n              <h5>{{post.posted |  date:'MM/dd/yyyy'}}</h5>\n          </div>\n        </a>\n    </ul>\n    <p class=\"error\" *ngIf=\"errorMessage\">{{errorMessage}}</p>\n  </div>"
     }),
     __metadata("design:paramtypes", [router_1.ActivatedRoute, blog_service_1.BlogService])
 ], BlogListComponent);

@@ -12,23 +12,23 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/catch");
 require("rxjs/add/operator/map");
-var BlogService = (function () {
-    function BlogService(http) {
+var ProjectsService = (function () {
+    function ProjectsService(http) {
         this.http = http;
         this.postsUrl = '/api/content/';
     }
-    BlogService.prototype.getPosts = function (page) {
+    ProjectsService.prototype.getProjects = function (type) {
         var params = new http_1.URLSearchParams();
-        params.set('purpose', 'blog');
-        params.set('category', page);
+        params.set('purpose', 'project');
+        params.set('category', type);
         return this.http.get(this.postsUrl, { search: params })
             .map(function (res) { return res.json(); });
     };
-    return BlogService;
+    return ProjectsService;
 }());
-BlogService = __decorate([
+ProjectsService = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])
-], BlogService);
-exports.BlogService = BlogService;
-//# sourceMappingURL=blog.service.js.map
+], ProjectsService);
+exports.ProjectsService = ProjectsService;
+//# sourceMappingURL=projects.service.js.map

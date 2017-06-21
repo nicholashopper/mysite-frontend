@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProjectsService } from './projects.service'
+import { Observable } from 'rxjs/Observable';
+import { ActivatedRoute } from '@angular/router';
+import { Post } from '../blog/post'
+
+
 
 @Component({
   template: `
@@ -28,10 +34,46 @@ import { Component } from '@angular/core';
     </div>
 
     <div class="container">
-    <h2>Projects</h2>
-    <p>types of projects</p>
-    </div>`
+    <div class="container">
+    <ul class="demo-list-icon mdl-list">
+      <li class="mdl-list__item" *ngFor="let post of posts">
+        <a class="post-button" [routerLink]="['/post', post.slug]">
+          <div>
+              <h3>{{post.title}}</h3>
+              <h5>{{post.posted |  date:'MM/dd/yyyy'}}</h5>
+          </div>
+        </a>
+    </ul>
+    <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+  </div>`
 })
 
 // Component class
-export class ProjectsComponent {}
+export class ProjectsComponent  implements OnInit {
+  type: string;
+  private sub: any;
+
+  errorMessage: string;
+  posts: Post[];
+  mode = 'Observable';
+ 
+
+  constructor (private route: ActivatedRoute, private projectsService: ProjectsService) {}
+ 
+  ngOnInit() {
+    this.sub = this.route.params.subscribe(params => {
+       this.type = params['type']; 
+       this.getProjects();
+    });
+  }
+
+  getProjects() {
+      this.projectsService.getProjects(this.type)
+           .subscribe(
+             posts => this.posts = posts,
+             error =>  this.errorMessage = <any>error);
+  }
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+} 

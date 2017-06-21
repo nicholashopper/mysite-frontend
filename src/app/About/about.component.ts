@@ -15,8 +15,8 @@ import { Component } from '@angular/core';
 
           <!-- Navigation with router directives-->
           <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" [routerLink]="['/about/me']">Myself</a>
-            <a class="mdl-navigation__link" [routerLink]="['/about/site']">This Site</a>
+            <a class="mdl-navigation__link" [routerLink]="['/post/bio']">Myself</a>
+            <a class="mdl-navigation__link" [routerLink]="['/post/this-site']">This Site</a>
           </nav>
         </div>
       </header>

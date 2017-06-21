@@ -38,18 +38,15 @@ import { Post } from './post'
     </div>
     </div>
 
-
-
-
-
   <div class="container">
     <ul class="demo-list-icon mdl-list">
       <li class="mdl-list__item" *ngFor="let post of posts">
-        <span>
-            <a [routerLink]="['/post', post.slug]"><h3>{{post.title}}</h3></a>
-            <h5>{{post.posted |  date:'MM/dd/yyyy'}}</h5>
-            <div [innerHTML]="post.body"></div>
-        </span>
+        <a class="post-button" [routerLink]="['/post', post.slug]">
+          <div>
+              <h3>{{post.title}}</h3>
+              <h5>{{post.posted |  date:'MM/dd/yyyy'}}</h5>
+          </div>
+        </a>
     </ul>
     <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
   </div>`
@@ -58,7 +55,7 @@ import { Post } from './post'
 
 // Component class implementing OnInit
 export class BlogListComponent implements OnInit {
-  slug: string;
+  page: string;
   private sub: any;
 
   errorMessage: string;
@@ -70,13 +67,13 @@ export class BlogListComponent implements OnInit {
  
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-       this.slug = params['page']; 
+       this.page = params['page']; 
+       this.getPosts();
     });
-    this.getPosts();
   }
 
   getPosts() {
-      this.blogService.getPosts()
+      this.blogService.getPosts(this.page)
            .subscribe(
              posts => this.posts = posts,
              error =>  this.errorMessage = <any>error);

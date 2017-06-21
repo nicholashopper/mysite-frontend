@@ -3,18 +3,18 @@ import { Response, Jsonp, Http, URLSearchParams }          from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { Post } from './post';
+import { Post } from '../blog/post';
  
 @Injectable()
-export class BlogService {
+export class ProjectsService {
   private postsUrl = '/api/content/';
 
   constructor (private http: Http) {}
  
-  getPosts(page: string): Observable<Post[]> {
+  getProjects(type: string): Observable<Post[]> {
   	let params = new URLSearchParams();
-  	params.set('purpose', 'blog');
-  	params.set('category', page);
+  	params.set('purpose', 'project');
+  	params.set('category', type);
     return this.http.get(this.postsUrl, { search: params })
                     .map(res => res.json());
   }

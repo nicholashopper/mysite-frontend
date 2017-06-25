@@ -12,7 +12,9 @@ import { HomeComponent } from './home.component'
         <div class="mdl-layout__header-row">
 
           <!-- Title -->
-          <span class="mdl-layout-title">Nicholas Hopper</span>
+          <a class="mdl-layout-title" [routerLink]="['/']">
+            <img src="/assets/site-logo.png" style="width:250px;height:50px;"/>
+          </a>
 
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>

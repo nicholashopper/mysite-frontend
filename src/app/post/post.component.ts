@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { BrowserModule, DomSanitizer, SafeHtml  } from '@angular/platform-browser'
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from './post.service';
 import { Post } from '../blog/post';
@@ -11,7 +12,7 @@ import { Post } from '../blog/post';
       <div class="page" *ngFor="let post of posts">
         <h1>{{post.title}}</h1>
         <h5>{{post.posted |  date:'MM/dd/yyyy'}}</h5>
-        <div [innerHTML]="post.body"></div>
+        <div [innerHTML]="getHtml(post.body)"></div>
       </div>
       <p *ngIf="posts?.length < 1"><br>Whoops! post/{{slug}} does not exist.</p>
     </div>
@@ -24,7 +25,7 @@ export class PostComponent implements OnInit, OnDestroy {
   posts: Post[];
   mode = 'Observable';
 
-  constructor(private route: ActivatedRoute, private postService: PostService) {}
+  constructor(private route: ActivatedRoute, private postService: PostService, private sanitizer: DomSanitizer) {}
 
   getPosts() {
       this.postService.getPosts(this.slug)
@@ -42,5 +43,9 @@ export class PostComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+
+  getHtml(html: String): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 }

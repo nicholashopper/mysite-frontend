@@ -1,9 +1,9 @@
+
 export class Post {
-  constructor(
-  	public purpose: string,
-    public title: string,
-    public slug: string,
-    public body: string,
-    public posted: string,
-    public category: string) { }
+  	purpose: string;
+    title: string;
+    slug: string;
+    body: string;
+    posted: string;
+    category: string;
 }

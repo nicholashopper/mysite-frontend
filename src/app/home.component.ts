@@ -25,9 +25,12 @@ import { Component } from '@angular/core';
     </div>
     </div>
 
-    <div class="container">
-	    <h2>Welcome, to my home.</h2>
-	</div>`
+   <div class="container">
+      <h2>Welcome to my personal site, </h2>
+      <p>Currently everything here is under construction. 
+      To learn more about what I'm up to, check my <a href="https://nicholas.works/blog">blog</a>.
+      To keep up with the new changes here, check my <a href="https://github.com/nicholashopper">github</a>. 
+  </div>`
 })
 
 // App Component class

@@ -29,7 +29,7 @@ import { Component } from '@angular/core';
 
     <div class="container">
 	    <h2>Contact</h2>
-	    <p>Me or This Site</p>
+	    <p>Currently, you can reach me at <b><i>nicholas.hopper.work@gmail.com</i></b></p>
 	</div>`
 })
 

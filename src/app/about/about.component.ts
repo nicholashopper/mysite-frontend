@@ -29,7 +29,9 @@ import { Component } from '@angular/core';
 
     <div class="container">
 	    <h2>About</h2>
-	    <p>Me or This Site</p>
+	    <p> Hi, I'm <a [routerLink]="['/post/bio']">Nicholas Hopper</a>.<br><br>
+      I have created <a [routerLink]="['/post/this-site']">this domain</a> to showcases my projects and current endeavors.
+      </p>
 	</div>`
 })
 

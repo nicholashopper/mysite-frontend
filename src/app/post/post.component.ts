@@ -45,7 +45,7 @@ export class PostComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
-  getHtml(html: String): SafeHtml {
+  getHtml(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 }

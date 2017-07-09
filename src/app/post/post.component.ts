@@ -11,7 +11,7 @@ import { Post } from '../blog/post';
     <div class="container">
       <div class="page" *ngFor="let post of posts">
         <h1>{{post.title}}</h1>
-        <h5>{{post.posted |  date:'MM/dd/yyyy'}}</h5>
+        <h5 *ngIf="post.purpose==='blog'">{{post.posted |  date:'MM/dd/yyyy'}}</h5>
         <div [innerHTML]="getHtml(post.body)"></div>
       </div>
       <p *ngIf="posts?.length < 1"><br>Whoops! post/{{slug}} does not exist.</p>

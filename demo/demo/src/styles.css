@@ -1,0 +1,149 @@
+@font-face {
+font-family: 'Roboto';
+src: url('fonts/roboto/Roboto-Light-webfont.eot');
+src: url('fonts/roboto/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+     url('fonts/roboto/Roboto-Light-webfont.woff') format('woff'),
+     url('fonts/roboto/Roboto-Light-webfont.ttf') format('truetype'),
+     url('fonts/roboto/Roboto-Light-webfont.svg#RobotoRegular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Roboto-Bold';
+src: url('fonts/roboto/Roboto-BoldCondensed-webfont.eot');
+src: url('fonts/roboto/Roboto-BoldCondensed-webfont.eot?#iefix') format('embedded-opentype'),
+     url('fonts/roboto/Roboto-BoldCondensed-webfont.woff') format('woff'),
+     url('fonts/roboto/Roboto-BoldCondensed-webfont.ttf') format('truetype'),
+     url('fonts/roboto/Roboto-BoldCondensed-webfont.svg#RobotoRegular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+  font-family: 'Roboto-Bold';
+}
+
+p {
+  color: gray;
+  font-family: 'Roboto';
+  font-size: 150%;
+}
+
+.demo-layout-transparent {
+  background: url('/demo/assets/background.jpg') center top / cover;
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: black;
+}
+
+.logo-bar {
+  background: rgba(255,255,255,0.9);
+  z-index: 95;
+}
+.mdl-layout__header-row {
+  background: rgba(255,255,255,0.75);
+  -webkit-box-shadow: -10px 0px 50px 0px #000000;
+        -moz-box-shadow: -10px 0px 50px 0px #000000;
+             box-shadow: -10px 0px 50px 0px #000000;
+  z-index: 90;
+}
+
+footer {
+  background: rgba(255,255,255,0.75);
+  -webkit-box-shadow: -10px 0px 25px 0px #000000;
+        -moz-box-shadow: -10px 0px 25px 0px #000000;
+             box-shadow: -10px 0px 25px 0px #000000;
+  z-index: 90;
+}
+
+.bottom {
+  text-align: right;
+  padding: 0 1% 0 1%;
+}
+
+.mdl-navigation__link {
+  font-family: 'Roboto';
+  font-size: 150%;
+  color: black;
+}
+.bottom .mdl-navigation__link {
+  font-family: 'Roboto';
+  font-size: 100%;
+  color: black;
+}
+.mdl-navigation__link:hover {
+  color: rgba(0,0,0,0.6);
+  background: white;
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.3);
+
+}
+
+.navbar:before {
+          content: "";
+          position: fixed;
+          top: -10px;
+          left: 0;
+          width: 100%;
+          height: 10px;
+
+          -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+              -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+                         box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+
+          z-index: 100;
+}
+
+.bar {
+  margin: auto;
+}
+
+.mdl-layout__drawer-button {
+  z-index: 100;
+}
+
+.mdl-layout__drawer {
+  z-index: 101;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 10%; 
+    height: auto
+}
+
+
+.page {
+  width: 50%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.9);
+  padding: 5%;
+  border: 2px solid #000;
+  border-radius: 8px;
+  -moz-border-radius: 15px;
+}
+
+@media screen and (max-width: 1024px) {
+      .bar {
+          display: none;
+      }
+      .logo-bar {
+          display: none;
+      }
+      .logo {
+        width: 110px;
+      }
+      .page {
+        width: 80%;
+      }
+}
